@@ -1,0 +1,186 @@
+:root {
+  --primary: #4e54c8;
+  --secondary: #8f94fb;
+  --background: #f6f9ff;
+  --accent: #f7971e;
+  --header-height: 64px;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  margin: 0;
+  background: var(--background);
+  color: #222;
+  scroll-behavior: smooth;
+}
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  color: #fff;
+  z-index: 10;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  box-shadow: 0 1px 12px rgba(0,0,0,0.06);
+}
+header .logo {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 30px;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+nav a:hover {
+  color: var(--accent);
+}
+section {
+  min-height: 100vh;
+  padding: calc(var(--header-height) + 32px) 24px 32px 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.section-title {
+  font-size: 2.2rem;
+  margin-bottom: 18px;
+  color: var(--primary);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.info-content {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+.memories-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+.memory-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(78,84,200,0.07);
+  overflow: hidden;
+  width: 240px;
+  text-align: center;
+  transition: transform 0.18s;
+}
+.memory-card:hover {
+  transform: scale(1.04);
+  box-shadow: 0 4px 24px rgba(78,84,200,0.12);
+}
+.memory-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+.memory-card .caption {
+  padding: 12px;
+  font-size: 1rem;
+}
+.events-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.event-item {
+  background: #fff;
+  border-left: 6px solid var(--primary);
+  margin-bottom: 18px;
+  padding: 16px 18px;
+  border-radius: 8px;
+  box-shadow: 0 1px 6px rgba(78,84,200,0.05);
+  transition: border-color 0.2s;
+}
+.event-item:hover {
+  border-color: var(--accent);
+}
+.event-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--primary);
+}
+.event-date {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 4px;
+}
+.event-desc {
+  font-size: 1rem;
+  color: #333;
+}
+#contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contact-form {
+  background: #fff;
+  padding: 32px 28px;
+  border-radius: 14px;
+  box-shadow: 0 2px 16px rgba(78,84,200,0.08);
+  max-width: 400px;
+  width: 100%;
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #dadada;
+  border-radius: 7px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s;
+}
+.contact-form input:focus, .contact-form textarea:focus {
+  border: 1.5px solid var(--primary);
+}
+.contact-form button {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  padding: 13px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.contact-form button:hover {
+  background: linear-gradient(90deg, var(--accent), var(--secondary));
+}
+.footer {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  color: #fff;
+  text-align: center;
+  padding: 22px 0;
+  font-size: 1rem;
+  position: relative;
+}
+@media (max-width: 800px) {
+  .memories-gallery { flex-direction: column; align-items: center; }
+  header { padding: 0 14px; }
+  section { padding: calc(var(--header-height) + 18px) 6px 18px 6px; }
+}
+@media (max-width: 500px) {
+  header { flex-direction: column; height: auto; }
+  .logo { font-size: 1.4rem; }
+  nav { margin-top: 10px; width: 100%; display: flex; justify-content: space-around; }
+  .contact-form { padding: 18px 6px; }
+}

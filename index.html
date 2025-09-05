@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Memories & Events</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Memories & Events</div>
+    <nav>
+      <a href="#info">Info</a>
+      <a href="#memories">Memories</a>
+      <a href="#events">Events</a>
+      <a href="#contact">Contact Us</a>
+    </nav>
+  </header>
+
+  <section id="info">
+    <div class="section-title">Info</div>
+    <div class="info-content">
+      Welcome to our one-stop page for sharing beautiful memories and upcoming events! Explore the gallery of our cherished moments, stay updated about our latest gatherings, and feel free to reach out using the contact form below.
+    </div>
+  </section>
+
+  <section id="memories">
+    <div class="section-title">Memories</div>
+    <div class="memories-gallery">
+      <div class="memory-card">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Memory 1">
+        <div class="caption">Sunset at the beach with friends</div>
+      </div>
+      <div class="memory-card">
+        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Memory 2">
+        <div class="caption">Mountain hiking adventure</div>
+      </div>
+      <div class="memory-card">
+        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Memory 3">
+        <div class="caption">Family picnic in the park</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="events">
+    <div class="section-title">Events</div>
+    <ul class="events-list">
+      <li class="event-item">
+        <div class="event-title">Annual Meetup 2025</div>
+        <div class="event-date">September 15, 2025</div>
+        <div class="event-desc">Join us for our annual gathering with fun activities, food, and music!</div>
+      </li>
+      <li class="event-item">
+        <div class="event-title">Charity Run</div>
+        <div class="event-date">October 10, 2025</div>
+        <div class="event-desc">Participate in our charity run to support local communities. All ages welcome!</div>
+      </li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <div class="section-title">Contact Us</div>
+    <form class="contact-form" id="contactForm" autocomplete="off">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" id="email" placeholder="Email ID (optional)">
+      <input type="tel" name="contact" id="contactNumber" placeholder="Contact Number (optional)" pattern="[0-9\-+() ]{7,}">
+      <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+      <button type="submit">Send Message</button>
+      <div id="formMessage" style="display:none; margin-top:10px; color: var(--primary); font-weight: 500;"></div>
+    </form>
+  </section>
+
+  <div class="footer">
+    &copy; 2025 Memories & Events. All rights reserved.
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
