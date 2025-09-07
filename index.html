@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My personal portfolio</title>
+    <title>My Personal Portfolio</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -11,61 +12,94 @@
     <nav>
         <div class="nav-container">
             <div class="logo">
-                <span> Vikas</span>
+                <span>Vikas</span>
             </div>
             <div class="links">
-                <div class="link"><a href="#"> Home </a></div>
-                <div class="link"><a href="#"> About </a></div>
-                <div class="link"><a href="#"> Projects </a></div>
-                <div class="link"><a href="#"> Skills </a></div>
-                <div class="link"><a href="#"> Blogs </a></div>
+                <div class="link"><a href="#">Home</a></div>
+                <div class="link"><a href="#">About</a></div>
+                <div class="link"><a href="#">Projects</a></div>
+                <div class="link"><a href="#">Skills</a></div>
+                <div class="link"><a href="#">Blogs</a></div>
                 <div class="link contact-btn"><a href="#">Contact Us</a></div>
             </div>
-            <i class="fa-solid fa-bars hamburg", onclick="hamburg()"></i>
+            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
         </div>
         <div class="dropdown">
             <div class="links">
-                <a href="">Home</a>
-                <a href="">About</a>
-                <a href="">Projects</a>
-                <a href="">Skills</a>
-                <a href="">Blogs</a>
-                <a href="">Contact Us</a>
-                <i class="fa-solid fa-xmark cancel" , onclick="cancel()"></i>
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Projects</a>
+                <a href="#">Skills</a>
+                <a href="#">Blogs</a>
+                <a href="#">Contact Us</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
             </div>
         </div>
-         <section>
-            <div class="maincontainer">
-                <div class="image">
-                    <img src="images/main1.jpg" alt="">
+    </nav>
+
+    <section>
+        <div class="maincontainer">
+            <div class="image">
+                <img src="images/main 1.png" alt="Portfolio Image">
+            </div>
+            <div class="content">
+                <h1>Hey I'm <span>Vikas</span></h1>
+                <p>I'm a passionate new web developer with a strong interest in technology. I enjoy working with HTML, CSS, and JavaScript to build responsive and creative websites. I'm always eager to learn new tools and techniques, and I'm excited to grow my skills and make an impact in the digital world.</p>
+                <div class="typewriter"><span></span></div>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-x"></i></a>
                 </div>
-                <div class="content">
-                    <h1>Hey I'm <span>Vikas</span></h1>
-                    <p>'m a passionate new web developer with a strong interest in technology. I enjoy working with HTML, CSS, and JavaScript to build responsive and creative websites. I'm always eager to learn new tools and techniques, and I'm excited to grow my skills and make an impact in the digital world.</p>
-                    <div class="typewriter"><span>I'm a</span></div>
-                    <div class="social-links">
-                        <a href="#"><i class="fa-brands fa-github"></i></a>
-                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-x"></i></a>
-                    </div>
-                    <div class="btn">
-                        <button>Download Cv</button>
-                    </div>
+                <div class="btn">
+                    <button>Download CV</button>
                 </div>
             </div>
-         </section>
-         <script>
-            function hamburg(){
-                const navbar=document.querySelector(".dropdown")
-                navbar.style.transform="translateY(0px)"
+        </div>
+    </section>
+
+    <script>
+        function hamburg() {
+            const navbar = document.querySelector(".dropdown");
+            navbar.style.transform = "translateY(0px)";
+        }
+
+        function cancel() {
+            const navbar = document.querySelector(".dropdown");
+            navbar.style.transform = "translateY(-500px)";
+        }
+
+        // Typewriter effect
+        const typewriter = document.querySelector(".typewriter span");
+        const roles = ["Designer", "Tech Enthusiast"];
+        let index = 0;
+        let charIndex = 0;
+
+        function type() {
+            if (charIndex < roles[index].length) {
+                typewriter.textContent += roles[index].charAt(charIndex);
+                charIndex++;
+                setTimeout(type, 100);
+            } else {
+                setTimeout(erase, 2000);
             }
-            function cancel(){
-                const navbar=document.querySelector(".dropdown")
-                navbar.style.transform="translateY(-500px)"
+        }
+
+        function erase() {
+            if (charIndex > 0) {
+                typewriter.textContent = roles[index].substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(erase, 100);
+            } else {
+                index = (index + 1) % roles.length;
+                setTimeout(type, 500);
             }
-         </script>
-    </nav>
-    
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            type();
+        });
+    </script>
 </body>
 </html>
